@@ -12,10 +12,10 @@ namespace lab3_game
         Texture2D myTexture;
         //int frame = 3;
 
-        //Texture2D cloudTexture;
-        //Vector2[] scaleCloud, cloudPosition;
-        //int[] speed;
-        //Random r = new Random();
+        Texture2D cloudTexture;
+        Vector2[] scaleCloud, cloudPosition;
+        int[] speed;
+        Random r = new Random();
 
         public Game1()
         {
@@ -35,19 +35,19 @@ namespace lab3_game
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
             myTexture = Content.Load<Texture2D>("NatureSprite");
-            //cloudTexture = Content.Load<Texture2D>("Cloud_Sprite");
+            cloudTexture = Content.Load<Texture2D>("Cloud_Sprite");
 
-            //cloudPosition = new Vector2[4];
-            //scaleCloud = new Vector2[4];
-            //speed = new int[4];
+            cloudPosition = new Vector2[4];
+            scaleCloud = new Vector2[4];
+            speed = new int[4];
 
-            /*for (int i = 0; i < 4; i++)
+            for (int i = 0; i < 4; i++)
             {
                 speed[i] = r.Next(1, 10);
                 cloudPosition[i].Y = r.Next(0, graphics.GraphicsDevice.Viewport.Height - cloudTexture.Height);
                 scaleCloud[i].X = r.Next(1, 3);
                 scaleCloud[i].Y = r.Next(1, 3);
-            }*/
+            }
             //speed = 5;
         }
 
@@ -61,7 +61,7 @@ namespace lab3_game
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
-            /*for(int i = 0; i < 4; i++)
+            for(int i = 0; i < 4; i++)
             {
                 cloudPosition[i].X += speed[i];
 
@@ -74,7 +74,7 @@ namespace lab3_game
                     scaleCloud[i].X = r.Next(1, 3);
                     scaleCloud[i].Y = r.Next(1, 3);
                 }
-            }*/
+            }
 
             
 
@@ -114,10 +114,10 @@ namespace lab3_game
             spriteBatch.Draw(myTexture, new Vector2(700, 450), new Rectangle(196, 196, 64, 64), Color.White);
 
             //cloud
-            /*for(int i = 0; i < 4; i++)
+            for(int i = 0; i < 4; i++)
             {
                 spriteBatch.Draw(cloudTexture, cloudPosition[i], null, Color.White, 0, Vector2.Zero, scaleCloud[i], 0, 0);
-            }*/
+            }
             
 
             spriteBatch.End();
